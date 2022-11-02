@@ -8,6 +8,14 @@ app.set('view engine', 'ejs')
 app.use('/articles', articleRouter)
 
 app.get('/', (req, res) => {
+
+    const articles = [{
+        title: 'Sample Article',
+        createdAt: Date.now(),
+        description: 'Article Text'
+    }]
+
+
     res.render('index', { text: "Hello"})
 })
 
