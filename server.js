@@ -1,7 +1,9 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const articleRouter = require('./routes/articles')
 const app = express()
 
+mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true})
 
 app.set('view engine', 'ejs')
 
@@ -19,4 +21,4 @@ app.get('/', (req, res) => {
     res.render('articles/index', { articles: articles})
 })
 
-app.listen(3000)
+app.listen(3000) 
