@@ -11,12 +11,12 @@ app.get('/', (req, res) => {
 
     const articles = [{
         title: 'Sample Article',
-        createdAt: Date.now(),
+        createdAt: new Date(),
         description: 'Article Text'
     }]
 
 
-    res.render('index', { text: "Hello"})
+    res.render('articles/index', { articles: articles})
 })
 
 app.listen(3000)
